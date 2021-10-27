@@ -1,0 +1,41 @@
+1.最大公约数和最小公倍数的关系
+已知 a,b 其最大公约数和最小公倍数的关系是 二数的乘积 等于 最大公约数乘以最小公倍数
+a*b = gcd(a,b)*lcm(a,b);
+
+2.求解最大公约数
+  2.1 辗转相除法 不停取模相除。直到模为0,比较大小。另一数为最大公约数 可用递归求解
+  2.2 等值算法 基于这样一个事实， 二数字公共不停的对2取模 取得一个次数count ，然后比较二数字差值，不停的循环求差值
+  循环条件是差值不等于另外一个值
+  while(differ != num2) {
+     differ = num1 -num2
+     if(differ > num2){
+         differ = num1
+     }else {
+         differ = num2;
+         num1 = num2;
+     }
+  }
+ 最后通过 2*count*diff
+  2.3 辗转相减法，不停的相减直到二个数相等
+   while(num1!=num2) {
+      if(num1>num2) {
+         num1-=num2
+      }else {
+         num2-=num1
+      }
+   }
+   2.4 暴力穷举法
+   int result =0;
+    for(int i = 1;i<=min;i++) {
+    if(num1%1i==0 &&num2%i) {
+          result = i;
+    }
+    }
+
+3.求解最小公倍数
+    3.1 公式法。基于这样一个公式 num1*num2 = lcm(num1,num2)*gcd(num1,num2)
+    lcm = num1*num2/gcd(num1,num2)
+    3.2 短除法。
+
+
+
